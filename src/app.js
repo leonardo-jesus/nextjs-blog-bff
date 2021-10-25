@@ -7,12 +7,10 @@ app.disable('etag');
 
 app.get("/projects", (req, res) => {
   console.log('REQUISICAO')
-  res.status(200).json({
-    projects: {
-      'project 1': 'Ecoleta',
-      'project2': 'NextJS Blog'
-    }
-  });
+  res.status(200).json([
+      { 'title': 'Ecoleta', 'description': 'A sustentable marketplace made with' },
+      { 'title': 'NextJS Blog', 'description': 'My NextJS Blog!' }
+  ]);
   return res.end();
 });
 
